@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LingosolveStudio</RootNamespace>
+    <AssemblyName>LingosolveStudio</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\LingosolveStudio.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>LingosolveStudio.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Application -->
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+
+    <!-- Main Window -->
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+
+    <!-- Dialogs -->
+    <Page Include="Dialogs\ApiKeysDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Dialogs\ApiKeysDialog.xaml.cs">
+      <DependentUpon>ApiKeysDialog.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dialogs\AITranslationDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Dialogs\AITranslationDialog.xaml.cs">
+      <DependentUpon>AITranslationDialog.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dialogs\SliderDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Dialogs\SliderDialog.xaml.cs">
+      <DependentUpon>SliderDialog.xaml</DependentUpon>
+    </Compile>
+
+    <!-- Services -->
+    <Compile Include="Services\AISettings.cs" />
+    <Compile Include="Services\OpenRouterService.cs" />
+    <Compile Include="Services\ImageProcessingService.cs" />
+    <Compile Include="Services\FileService.cs" />
+
+    <!-- Controls -->
+    <Compile Include="Controls\ImageCanvas.cs" />
+    <Compile Include="Controls\MoveThumb.cs" />
+    <Compile Include="Controls\ResizeThumb.cs" />
+
+    <!-- Utilities -->
+    <Compile Include="Utilities\ImageHelper.cs" />
+    <Compile Include="Utilities\ImageConverter.cs" />
+    <Compile Include="Utilities\ImageIOHelper.cs" />
+    <Compile Include="Utilities\gmseDeskew.cs" />
+    <Compile Include="Utilities\GrayBMP_File.cs" />
+    <Compile Include="Utilities\FixedSizeStack.cs" />
+    <Compile Include="Utilities\LargePdfHandler.cs" />
+    <Compile Include="Utilities\PdfUtilities.cs" />
+    <Compile Include="Utilities\PDFConvert.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
+
+    <!-- Properties -->
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\LingosolveStudio.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\fatcow\cancel.png" />
+    <Resource Include="Icons\fatcow\document_page_next.png" />
+    <Resource Include="Icons\fatcow\document_page_previous.png" />
+    <Resource Include="Icons\fatcow\draw_eraser.png" />
+    <Resource Include="Icons\fatcow\find.png" />
+    <Resource Include="Icons\fatcow\gear_in.png" />
+    <Resource Include="Icons\fatcow\image_paste.png" />
+    <Resource Include="Icons\fatcow\ocr.png" />
+    <Resource Include="Icons\fatcow\open.png" />
+    <Resource Include="Icons\fatcow\pilcrow_delete.png" />
+    <Resource Include="Icons\fatcow\rotate_ccw.png" />
+    <Resource Include="Icons\fatcow\rotate_cw.png" />
+    <Resource Include="Icons\fatcow\save.png" />
+    <Resource Include="Icons\fatcow\tools.png" />
+    <Resource Include="Icons\fatcow\translation.png" />
+    <Resource Include="Icons\fatcow\zoom_actual.png" />
+    <Resource Include="Icons\fatcow\zoom_fit.png" />
+    <Resource Include="Icons\fatcow\zoom_in.png" />
+    <Resource Include="Icons\fatcow\zoom_out.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
