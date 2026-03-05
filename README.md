@@ -52,7 +52,8 @@ LingosolveStudio/
 
 ## Credits
 
-Idea/Development: Hishiryo 2026.
+Idea/Development: Hishiryo 2026
+
 Lingosolve Studio is partly inspired by VietOCR (https://vietocr.sourceforge.net/).
 Powered by [OpenRouter.ai](https://openrouter.ai)
 
