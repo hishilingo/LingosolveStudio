@@ -16,17 +16,6 @@ Lingosolve Studio is a standalone WPF desktop application that combines image vi
 - **Clipboard Paste** -- Paste images from the clipboard for quick OCR.
 - **Token Tracking** -- Status bar shows cumulative input/output token usage per session.
 
-## Keyboard Shortcuts
-
-| Shortcut | Action |
-|---|---|
-| Ctrl+O | Open file |
-| Ctrl+F | Focus find bar (OCR or Translation panel) |
-| Ctrl+Z | Undo image edit |
-| Ctrl+Mouse Wheel | Zoom in/out |
-| Enter (in find bar) | Find next |
-| Shift+Enter (in find bar) | Find previous |
-
 ## Requirements
 
 - Windows 10 or later
